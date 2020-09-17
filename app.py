@@ -21,7 +21,7 @@ def preview():
     df = pd.read_csv("Iris.csv")
     return render_template("preview.html",df_view = df)
 
-@app.route('/',methods=["POST"])
+@app.route('/',methods=["POST","GET"])
 def analyze():
 	if request.method == 'POST':
 		petal_length = request.form['petal_length']
