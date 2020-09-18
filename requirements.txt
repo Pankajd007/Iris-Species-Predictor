@@ -21,3 +21,4 @@
        six
        threadpoolctl
        flask_material
+       pickle
