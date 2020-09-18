@@ -4,9 +4,10 @@ from flask_material import Material
 # EDA PKg
 import pandas as pd 
 import numpy as np 
+import pickle
 
 # ML Pkg
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
 
 
 app = Flask(__name__)
@@ -41,7 +42,7 @@ def analyze():
 
 		# Reloading the Model
 		if model_choice == 'logitmodel':
-		    logit_model = joblib.load('model.pkl')
+		    logit_model = pickle.load(open('model.pkl', 'rb'))
 		    result_prediction = logit_model.predict(ex1);print(type(result_prediction))
 		elif model_choice == 'knnmodel':
 			knn_model = joblib.load('data/knn_model_iris.pkl')
